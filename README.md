@@ -6,4 +6,4 @@ Tasks completed:
 . Defined project scope
 . Defined each members' component
 . Defined XP Core values by team member (Renato: Simplicity; Manoj: Communication; Gene: Courage)
-
+. Defined technologies to use
