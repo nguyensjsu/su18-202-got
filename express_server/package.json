@@ -1,0 +1,22 @@
+{
+  "name": "su18-cmpe202-got-server",
+  "version": "1.0.0",
+  "description": "GoT Team Sprint Task Sheet: [link](https://docs.google.com/spreadsheets/d/1aClxEXtwHJ4eOmA1Z3R5MAL5zA_J3zpr3BAFg0llyGQ/edit?usp=sharing)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nguyensjsu/su18-202-got.git"
+  },
+  "author": "Yu Xu (Gene)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nguyensjsu/su18-202-got/issues"
+  },
+  "homepage": "https://github.com/nguyensjsu/su18-202-got#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
