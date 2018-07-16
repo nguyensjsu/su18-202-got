@@ -6,8 +6,7 @@
 - Gene
 
 ## Scrum Board
-### July 15th, 2018 (8pm to 9:30pm)
-#### Attendy: Renato, Manoj, Gene
+### July 15th, 2018                   (Time: 8pm to 9:30pm, Attendy: Renato, Manoj, Gene)
 #### Tasks completed:
 - Defined project scope
 - Defined each members' component
