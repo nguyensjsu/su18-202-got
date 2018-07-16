@@ -1,6 +1,7 @@
 # su18-202-got
 
-July 15th, 2018
+July 15th, 2018 (8pm to 9:30pm)
+Presented: Renato, Manoj, Gene
 
 Tasks completed:
 . Defined project scope
