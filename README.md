@@ -22,7 +22,7 @@
 
 - Project Board (on GitHub)
 
-[https://github.com/nguyensjsu/su18-202-got/edit/master/README.md](https://github.com/nguyensjsu/su18-202-got/edit/master/README.md)
+[https://github.com/nguyensjsu/su18-202-got/projects/1](https://github.com/nguyensjsu/su18-202-got/projects/1)
 
 - Project Journal (on GitHub)
 
