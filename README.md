@@ -33,5 +33,5 @@
 [https://docs.google.com/spreadsheets/d/1aClxEXtwHJ4eOmA1Z3R5MAL5zA_J3zpr3BAFg0llyGQ/edit?usp=sharing](https://docs.google.com/spreadsheets/d/1aClxEXtwHJ4eOmA1Z3R5MAL5zA_J3zpr3BAFg0llyGQ/edit?usp=sharing)
 
 
-Thank You,
+Thank You,</br>
 GoT Team
