@@ -1,0 +1,19 @@
+{
+  "name": "sso_server",
+  "version": "1.0.0",
+  "description": "google_oauth_sso",
+  "main": "index.js",
+  "engines": {
+    "node": "8.11.1",
+    "npm": "6.1.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Yu Xu (Gene)",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "passport": "^0.4.0"
+  }
+}
