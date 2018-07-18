@@ -14,3 +14,9 @@
 - Store API set up and tested locally
 - Store API deployed to Google Cloud Function. 
   webhook: https://us-central1-cmpe202-starbucks.cloudfunctions.net/store_api?query=starbucks%20near%2094566
+
+## July 17th, 2018                   (Time: 8pm to 8:30pm, Attendy: Renato, Manoj, Gene)
+#### Tasks completed:
+- Completed coding to set up an express server for google oauth single sign-on
+- Google SSO enables user sessions and cookies
+- SSO server is deployed to Heroku at: https://protected-harbor-31970.herokuapp.com/auth/google
