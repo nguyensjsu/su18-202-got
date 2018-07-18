@@ -25,6 +25,5 @@ app.use(passport.session());
 require("./routes/authRoute")(app);
 // https://git.heroku.com/protected-harbor-31970.git
 
-
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);

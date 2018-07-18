@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b304ff0-7b0f-496f-800b-e139ccbd629c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/express_server/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/express_server/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/express_server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/express_server/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/express_server/sso_server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/express_server/sso_server/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/express_server/sso_server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/express_server/sso_server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/express_server/sso_server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/express_server/sso_server/package.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,20 +14,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/express_server/sso_server/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="390">
+              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="passport.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="passport.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/express_server/sso_server/services/passport.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+            <state relative-caret-position="240">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
@@ -40,6 +37,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
               <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="keys.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/express_server/sso_server/config/keys.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -83,10 +89,10 @@
         <option value="$PROJECT_DIR$/express_server/sso_server/package.json" />
         <option value="$PROJECT_DIR$/express_server/sso_server/.gitignore" />
         <option value="$PROJECT_DIR$/express_server/sso_server/config/keys.js" />
-        <option value="$PROJECT_DIR$/express_server/sso_server/index.js" />
         <option value="$PROJECT_DIR$/express_server/sso_server/models/Users.js" />
         <option value="$PROJECT_DIR$/express_server/sso_server/services/passport.js" />
         <option value="$PROJECT_DIR$/express_server/sso_server/routes/authRoute.js" />
+        <option value="$PROJECT_DIR$/express_server/sso_server/index.js" />
       </list>
     </option>
   </component>
@@ -276,15 +282,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1531720992163</updated>
-      <workItem from="1531720993570" duration="16245000" />
+      <workItem from="1531720993570" duration="17816000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16245000" />
+    <option name="totallyTimeSpent" value="17816000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="513" y="23" width="927" height="823" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -297,10 +304,10 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Sequence" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.5092461" />
+      <window_info anchor="bottom" id="Terminal" weight="0.5092461" />
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18870057" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18870057" />
       <window_info anchor="right" id="Database" />
       <window_info anchor="right" id="SciView" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -387,31 +394,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/express_server/sso_server/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/express_server/sso_server/node_modules/express/lib/response.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="98">
           <caret line="65" selection-start-line="65" selection-end-line="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/express_server/sso_server/config/keys.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/express_server/sso_server/models/Users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -424,8 +410,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/express_server/sso_server/services/passport.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+        <state relative-caret-position="240">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/express_server/sso_server/models/Users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/express_server/sso_server/config/keys.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/express_server/sso_server/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>
