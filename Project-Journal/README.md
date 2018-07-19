@@ -27,3 +27,5 @@
 - Discussed and devided UI work.
 - Nobody was blocked.
 - Proof of concept for API architecture Completed
+- Completed writing code of Starbucks web app smart contract
+- Deployed smart contract to Rinkeby and completed local and remote tests
