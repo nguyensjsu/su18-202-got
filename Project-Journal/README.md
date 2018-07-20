@@ -29,3 +29,8 @@
 - Proof of concept for API architecture Completed
 - Completed writing code of Starbucks web app smart contract
 - Deployed smart contract to Rinkeby and completed local and remote tests
+
+## July 19th, 2018                   (Time: 10pm to 10:30pm, Attendy: Renato, Manoj, Gene)
+#### Tasks completed:
+- Addressed co-existence issues of express and next.js servers
+- Deployed blockchain starbucks web app to heroku (minor routing issues still exists)
