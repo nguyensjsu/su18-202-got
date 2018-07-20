@@ -23,6 +23,7 @@ passport.use(
         email: profile.emails[0].value,
         firstName: profile.name.givenName
       }).save();
+
       callback(null, user);
     }
   )

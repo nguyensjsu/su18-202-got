@@ -6,9 +6,13 @@ module.exports = app => {
     passport.authenticate("google", { scope: ["profile", "email"] })
   );
 
-  app.get("/auth/google/callback", passport.authenticate("google"), (req, res)=>{
-    res.redirect("/homepage");
-  });
+  app.get(
+    "/auth/google/callback",
+    passport.authenticate("google"),
+    (req, res) => {
+      res.redirect("/homepage");
+    }
+  );
 
   app.get("/api/current_user", (req, res) => {
     if (req.user) {
@@ -32,6 +36,6 @@ module.exports = app => {
   });
 
   app.get("/homepage", (req, res) => {
-    res.send("Welcome to Starbucks Home Page, "+req.user.firstName+"!");
+    res.send("Welcome to Starbucks starbucksUsers Page, " + req.user.firstName + "!");
   });
 };
