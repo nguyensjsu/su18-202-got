@@ -1,0 +1,39 @@
+{
+  "name": "bc_server",
+  "version": "1.0.0",
+  "description": "block_chain_server",
+  "main": "index.js",
+  "engines": {
+    "node": "8.11.1",
+    "npm": "6.1.0"
+  },
+  "scripts": {
+    "start": "NODE_ENV=production node server.js",
+    "dev": "node server.js",
+    "build": "next build",
+    "heroku-postbuild": "next build",
+    "test": "mocha ethereum/test/StarbucksUser.test.js"
+  },
+  "author": "Yu Xu (Gene)",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "concurrently": "^3.6.0",
+    "cookie-session": "^2.0.0-beta.3",
+    "express": "^4.16.3",
+    "fs-extra": "^7.0.0",
+    "ganache-cli": "^6.1.6",
+    "mocha": "^5.2.0",
+    "mongoose": "^5.2.4",
+    "next": "^6.1.1",
+    "next-routes": "^1.4.2",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^1.0.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "semantic-ui-react": "^0.82.0",
+    "solc": "^0.4.24",
+    "truffle-hdwallet-provider": "0.0.5",
+    "web3": "^1.0.0-beta.26"
+  }
+}
