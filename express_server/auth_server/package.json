@@ -24,6 +24,7 @@
     "morgan": "*",
     "nodemon": "*",
     "passport": "*",
+    "passport-google-oauth20": "^1.0.0",
     "passport-jwt": "*",
     "passport-local": "*"
   }

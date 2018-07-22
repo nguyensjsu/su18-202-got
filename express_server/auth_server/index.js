@@ -5,12 +5,12 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const app = express();
 const router = require('./router');
-const config = require('./config/keys');
+const keys = require('./config/keys');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
 // DB Setup
-mongoose.connect(config.mongoDBURI);
+mongoose.connect(keys.mongoDBURI);
 
 // App Setup
 app.use(morgan('combined'));

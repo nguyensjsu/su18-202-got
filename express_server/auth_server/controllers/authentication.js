@@ -1,6 +1,6 @@
 const jwt = require("jwt-simple");
 const User = require("../models/user");
-const config = require("../config/keys");
+const keys = require("../config/keys");
 
 function tokenForUser(user) {
   const timestamp = new Date().getTime();
@@ -11,8 +11,12 @@ function tokenForUser(user) {
       iat: timestamp,
       exp: timestamp + 24 * 60 * 60 * 1000
     },
-    config.secret
+    keys.secret
   );
+}
+
+exports.googlesignup = function(req, res, next){
+  res.send({ token: tokenForUser(req.user) });
 }
 
 exports.signin = function(req, res, next) {
