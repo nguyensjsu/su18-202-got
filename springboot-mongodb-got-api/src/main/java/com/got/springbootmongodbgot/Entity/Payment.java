@@ -20,4 +20,35 @@ public class Payment {
         this.LastUpdatedOn = LastUpdatedOn;
     }
 
+    public String getUserId() {
+        return UserId;
+    }
+
+    public void setUserId(String userId) {
+        UserId = userId;
+    }
+
+    public String getProductCode() {
+        return ProductCode;
+    }
+
+    public void setProductCode(String productCode) {
+        ProductCode = productCode;
+    }
+
+    public String getStoreCode() {
+        return StoreCode;
+    }
+
+    public void setStoreCode(String storeCode) {
+        StoreCode = storeCode;
+    }
+
+    public LocalDateTime getLastUpdatedOn() {
+        return LastUpdatedOn;
+    }
+
+    public void setLastUpdatedOn(LocalDateTime lastUpdatedOn) {
+        LastUpdatedOn = lastUpdatedOn;
+    }
 }
