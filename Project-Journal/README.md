@@ -12,7 +12,7 @@
 - Set up MongoDb database
 - Proof of concept for API architecture Design
 - Store API set up and tested locally
-- Store API deployed to Google Cloud Function. 
+- Store API deployed to Google Cloud Function.
   webhook: https://us-central1-cmpe202-starbucks.cloudfunctions.net/store_api?query=starbucks%20near%2094566
 
 ## July 17th, 2018                   (Time: 8pm to 8:30pm, Attendy: Renato, Manoj, Gene)
@@ -34,3 +34,8 @@
 #### Tasks completed:
 - Addressed co-existence issues of express and next.js servers
 - Deployed blockchain starbucks web app to heroku (minor routing issues still exists)
+
+## July 21st, 2018                   (Time: 10pm to 10:43pm, Attendy: Renato, Manoj, Gene)
+#### Tasks completed:
+- Aligned Login mechanism and token generation
+- Manoj is blocked: Waiting for Android Mobile Project to star implementing the integration app-API.
