@@ -30,6 +30,18 @@ function doQueryInDatabase($query) {
 }
 
 
+function getRewardsBalanceFromUserWithId($userId){
+	global $mysqli;
+    $email = mysqli_real_escape_string($mysqli, $email);
+    $res = doQueryInDatabase("SELECT balance FROM rewards WHERE user_id = '$userId' LIMIT 1");
+    if ($res->num_rows == 0)
+        return null;
+
+    $row = $res->fetch_assoc();
+
+    return $row['balance'];
+}
+
 
 // - - - - - - - - - - - - -
 // Aux functions
