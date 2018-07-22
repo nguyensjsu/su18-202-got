@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface PaymentDao extends MongoRepository<Card, String> {
-    //public List<Card> findCardByUserId(String UserId);
+    public double doPayment(String UserId, String Product);
 }

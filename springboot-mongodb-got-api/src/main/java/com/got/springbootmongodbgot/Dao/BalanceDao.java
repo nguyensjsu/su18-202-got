@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface BalanceDao extends MongoRepository<Card, String> {
-    //public List<Card> findCardByUserId(String UserId);
+    public double getTotalBalance(String UserId);
 }
