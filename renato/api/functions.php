@@ -80,13 +80,23 @@ function returnErrorNotAuthenticated($errorMsgDetail){
     returnError(2, "You are not logged in. Please sign in.", $errorMsgDetail);
 }
 
-
 function returnError($code, $msg, $msgDetail = null){
 	$ret = new StdClass();
 	$ret->errorCode = $code;
 	$ret->errorMessage = $msg;
 	$ret->errorMessageDetail = $msgDetail;
     returnJSON($ret);
+}
+
+
+// - - - - - - - - - - - - -
+// Return Json
+
+function returnJSON($obj) {
+    header("Content-type: application/json");
+    $out = json_encode($obj, JSON_PRETTY_PRINT);
+    print $out;
+    exit;
 }
 
 
