@@ -23,12 +23,17 @@ public class SignUpActivity extends AppCompatActivity {
     public void btSignUpHandler(View v) {
         System.out.println("btSignUpHandler");
 
+        //TODO: Check for valid inputs
+
+
         // TODO: Make API request to register user
 
 
         // TODO: Redirect user to MyCards if registration is successful
         Intent intent = new Intent(this, MyCardsActivity.class);
         startActivity(intent);
+
+        // TODO: If error, show Toast
     }
 
 }
