@@ -3,42 +3,56 @@ package com.got.springbootmongodbgot.Entity;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.time.LocalDateTime;
+
 @Document
 public class Card {
     @Id
     String id;
-    String CardId;
-    String CardCode;
-    String UserId;
+    String cardid;
+    String cardcode;
+    double cardvalue;
+    String userid;
+    LocalDateTime lastupdatedon;
 
-    public Card(String CardId, String CardCode, String UserId) {
-        this.CardId = CardId;
-        this.CardCode = CardCode;
-        this.UserId = UserId;
+    public Card(String cardid, String cardcode, double cardvalue, String userid, LocalDateTime lastupdatedon) {
+        this.cardid = cardid;
+        this.cardcode = cardcode;
+        this.cardvalue = cardvalue;
+        this.userid = userid;
+        this.lastupdatedon = lastupdatedon;
     }
 
     public String getCardId() {
-        return CardId;
+        return cardid;
     }
 
-    public void setCardId(String cardId) {
-        CardId = cardId;
+    public void setCardId(String CardId) {
+        this.cardid = CardId;
     }
 
     public String getCardCode() {
-        return CardCode;
+        return cardcode;
     }
 
-    public void setCardCode(String cardCode) {
-        CardCode = cardCode;
+    public void setCardCode(String CardCode) {
+        this.cardcode = CardCode;
     }
 
     public String getUserId() {
-        return UserId;
+        return userid;
     }
 
-    public void setUserId(String userId) {
-        UserId = userId;
+    public void setUserId(String UserId) {
+        this.userid = UserId;
+    }
+
+    public double getCardValue() {
+        return cardvalue;
+    }
+
+    public void setCardValue(double cardvalue) {
+        this.cardvalue = cardvalue;
     }
 
    // public String toString() {

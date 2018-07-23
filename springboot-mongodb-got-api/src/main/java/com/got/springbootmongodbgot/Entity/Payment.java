@@ -8,47 +8,47 @@ import java.time.LocalDateTime;
 public class Payment {
     @Id
     String id;
-    String UserId;
-    String ProductCode;
-    String StoreCode;
-    LocalDateTime LastUpdatedOn;
+    String userid;
+    double payamount;
+    String storecode;
+    LocalDateTime lastupdatedon;
 
-    public Payment(String UserId, String ProductCode, String StoreCode, LocalDateTime LastUpdatedOn) {
-        this.UserId = UserId;
-        this.ProductCode = ProductCode;
-        this.StoreCode = StoreCode;
-        this.LastUpdatedOn = LastUpdatedOn;
+    public Payment(String userid, double payamount, String storecode, LocalDateTime lastupdatedon) {
+        this.userid = userid;
+        this.payamount = payamount;
+        this.storecode = storecode;
+        this.lastupdatedon = lastupdatedon;
     }
 
     public String getUserId() {
-        return UserId;
+        return userid;
     }
 
     public void setUserId(String userId) {
-        UserId = userId;
+        this.userid = userId;
     }
 
-    public String getProductCode() {
-        return ProductCode;
+    public double getPayAmount() {
+        return payamount;
     }
 
-    public void setProductCode(String productCode) {
-        ProductCode = productCode;
+    public void setPayAmount(double payamount) {
+        this.payamount = payamount;
     }
 
     public String getStoreCode() {
-        return StoreCode;
+        return storecode;
     }
 
     public void setStoreCode(String storeCode) {
-        StoreCode = storeCode;
+        this.storecode = storeCode;
     }
 
     public LocalDateTime getLastUpdatedOn() {
-        return LastUpdatedOn;
+        return lastupdatedon;
     }
 
     public void setLastUpdatedOn(LocalDateTime lastUpdatedOn) {
-        LastUpdatedOn = lastUpdatedOn;
+        this.lastupdatedon = lastUpdatedOn;
     }
 }
