@@ -35,7 +35,17 @@
 - Addressed co-existence issues of express and next.js servers
 - Deployed blockchain starbucks web app to heroku (minor routing issues still exists)
 
+## July 20th, 2018                   (Time: 10pm to 10:30pm, Attendy: Renato, Manoj, Gene)
+#### Tasks completed:
+- Encountered technical roadblock: main page route no longer working explicitly or programmatically once the app is deployed to Heroku
+
 ## July 21st, 2018                   (Time: 10pm to 10:43pm, Attendy: Renato, Manoj, Gene)
 #### Tasks completed:
 - Aligned Login mechanism and token generation
 - Manoj is blocked: Waiting for Android Mobile Project to star implementing the integration app-API.
+
+## July 22st, 2018                   (Time: 10:30pm to 10:40pm, Attendy: Renato, Manoj, Gene)
+#### Tasks completed:
+- Implemented auth APIs that enable: 1) login with email & password, API responds with token; 2) sign up with email & password, API responds with token; 3) google sigle sign-on with google account, API responds with token; 4) customer re-visit with valid token, API responds with user ID.
+- Mobile app project created (which as a block for Manoj).
+
