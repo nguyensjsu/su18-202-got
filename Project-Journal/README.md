@@ -35,7 +35,7 @@
 - Addressed co-existence issues of express and next.js servers
 - Deployed blockchain starbucks web app to heroku (minor routing issues still exists)
 
-## July 19th, 2018                   (Time: 10pm to 10:30pm, Attendy: Renato, Manoj, Gene)
+## July 20th, 2018                   (Time: 10pm to 10:30pm, Attendy: Renato, Manoj, Gene)
 #### Tasks completed:
 - Encountered technical roadblock: main page route no longer working explicitly or programmatically once the app is deployed to Heroku
 
