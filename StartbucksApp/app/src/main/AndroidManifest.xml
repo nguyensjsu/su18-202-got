@@ -22,6 +22,8 @@
         <activity android:name=".MyCardsActivity" > </activity>
         <activity android:name=".SignUpActivity" > </activity>
         <activity android:name=".AddCardActivity" > </activity>
+        <activity android:name=".RewardsActivity" > </activity>
+
 
 
     </application>
