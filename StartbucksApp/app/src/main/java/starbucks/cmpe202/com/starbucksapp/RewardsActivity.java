@@ -1,16 +1,19 @@
 package starbucks.cmpe202.com.starbucksapp;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
+import android.widget.TextView;
 
 public class RewardsActivity extends AppCompatActivity {
+
+    private TextView tvRewardPoints;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rewards);
+
+        tvRewardPoints = findViewById(R.id.tvRewardPoints);
     }
 
     @Override
@@ -19,12 +22,5 @@ public class RewardsActivity extends AppCompatActivity {
         System.out.println("on Resume");
     }
 
-
-    public void btAddCardHandler(View v) {
-        System.out.println("btAddCardHandler");
-
-        Intent intent = new Intent(this, AddCardActivity.class);
-        startActivity(intent);
-    }
 
 }
