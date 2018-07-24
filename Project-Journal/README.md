@@ -49,3 +49,8 @@
 - Implemented auth APIs that enable: 1) login with email & password, API responds with token; 2) sign up with email & password, API responds with token; 3) google sigle sign-on with google account, API responds with token; 4) customer re-visit with valid token, API responds with user ID.
 - Mobile app project created (which as a block for Manoj).
 
+## July 23rd, 2018                   (Time: 09:35pm to 09:40pm, Attendy: Renato, Manoj, Gene)
+#### Tasks completed:
+- Almost all mobile app screens (views only) created;
+- No one is blocked.
+
