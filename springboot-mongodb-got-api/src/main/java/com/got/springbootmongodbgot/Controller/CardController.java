@@ -20,12 +20,8 @@ public class CardController {
 
 
     @RequestMapping(value = "/addcard", method = RequestMethod.POST)
-    public String addcard(@RequestBody Card card){
-    //another way to declare public String addcard(@RequestParam String cardid, @RequestParam String cardcode, @RequestParam double cardvalue,@RequestParam String userid) {
-        String cardid = card.getCardId();
-        String cardcode = card.getCardCode();
-        double cardvalue = card.getCardValue();
-        String userid = card.getUserId();
+    public String addcard(@RequestParam String cardid, @RequestParam String cardcode, @RequestParam double cardvalue,@RequestParam String userid) {
+
         if(cardid.length() != 9 || cardcode.length() != 3)
             return "This is not a valid card. Please enter 9 digits for Card id and 3 digit for Card Code."+"\n You entered cardid="+cardid+", cardcode="+cardcode+", cardvalue="+cardvalue+", userid="+userid+", CardId len="+cardid.length()+", Card Code len="+cardcode.length();
         Card p = cardService.create(cardid,cardcode, cardvalue, userid);

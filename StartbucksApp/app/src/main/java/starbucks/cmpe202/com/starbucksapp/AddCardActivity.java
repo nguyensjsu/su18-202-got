@@ -18,6 +18,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.JsonObject;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedWriter;
@@ -65,8 +66,6 @@ public class AddCardActivity extends AppCompatActivity {
         //Refrence: https://developer.android.com/training/volley/request
         String baseuri = getString(R.string.api_uri);
         //RequestQueue requestQueue = Volley.newRequestQueue(this);
-
-
         /*
          String url = baseuri+"/getall";
         //String uri = String.format("http://somesite.com/some_endpoint.php?param1=%1$s&param2=%2$s", num1, num2);
@@ -130,11 +129,36 @@ public class AddCardActivity extends AppCompatActivity {
         requestQueue.add(myReq);
         */
 String url = baseuri+"/addcard";
+
         HashMap<String, String> params = new HashMap<>();
         params.put("cardid", "123456789");
         params.put("cardcode", "123");
         params.put("cardvalue", "44");
         params.put("userid", "TT");
+
+/*
+        JSONObject params = new JSONObject();
+        try {
+        params.put("cardid", "123456789");
+        params.put("cardcode", "123");
+        params.put("cardvalue", 44.00);
+        params.put("userid", "TT");
+        } catch (JSONException e) {
+            Log.e("MYAPP", "unexpected JSON exception", e);
+            // Do something to recover ... or kill the app.
+        }
+        String json = params.toString();
+        JSONObject params = null;
+        try {
+        params = new JSONObject("{'cardid':'123456789','cardcode':'123','cardvalue':44,'userid':'TT'}");
+        } catch (JSONException e) {
+            Log.e("MYAPP", "unexpected JSON exception", e);
+            // Do something to recover ... or kill the app.
+        }
+        */
+        HashMap<String, String> headers = new HashMap<String, String>();
+        //headers.put("Content-Type", "application/json");
+
 
         ConnectionManager.volleyStringRequest(this, true, null, url, Request.Method.POST, params, new VolleyResponse() {
             @Override
