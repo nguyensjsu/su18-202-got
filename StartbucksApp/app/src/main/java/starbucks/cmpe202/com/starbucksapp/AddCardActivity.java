@@ -31,6 +31,9 @@ import java.util.Map;
 
 import javax.net.ssl.HttpsURLConnection;
 
+import io.gloxey.gnm.interfaces.VolleyResponse;
+import io.gloxey.gnm.managers.ConnectionManager;
+
 public class AddCardActivity extends AppCompatActivity {
 
     TextView inputCardNumber;
@@ -61,8 +64,13 @@ public class AddCardActivity extends AppCompatActivity {
 
         //Refrence: https://developer.android.com/training/volley/request
         String baseuri = getString(R.string.api_uri);
-        String url = baseuri+"/getall";
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        //RequestQueue requestQueue = Volley.newRequestQueue(this);
+
+
+        /*
+         String url = baseuri+"/getall";
+        //String uri = String.format("http://somesite.com/some_endpoint.php?param1=%1$s&param2=%2$s", num1, num2);
+
 
         // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
@@ -84,9 +92,82 @@ public class AddCardActivity extends AppCompatActivity {
                 //mTextView.setText("That didn't work!");
             }
         });
-
-// Add the request to the RequestQueue.
+        // Add the request to the RequestQueue.
         requestQueue.add(stringRequest);
+        */
+//addcard?cardid=2222222222&cardcode=222&cardvalue=20.5&userid=mm
+        /*
+        StringRequest myReq = new StringRequest(Request.Method.POST,
+                baseuri+"/addcard",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        // Display the first 500 characters of the response string.
+                        Log.e("Response is: ", response.substring(0,500));
+                        Toast.makeText(getApplicationContext(), "Response is: "+ response.substring(0,500),
+                                Toast.LENGTH_SHORT).show();
+                        //mTextView.setText("Response is: "+ response.substring(0,500));
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("Response is: ", error.toString());
+                Toast.makeText(getApplicationContext(), "Response Error: "+ error.toString(),
+                        Toast.LENGTH_SHORT).show();
+                //mTextView.setText("That didn't work!");
+            }
+        }) {
+
+            protected Map<String, String> getParams() throws com.android.volley.AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("cardid", "123456789");
+                params.put("cardcode", "123");
+                params.put("cardvalue", "44");
+                params.put("userid", "TT");
+                return params;
+            };
+        };
+        requestQueue.add(myReq);
+        */
+String url = baseuri+"/addcard";
+        HashMap<String, String> params = new HashMap<>();
+        params.put("cardid", "123456789");
+        params.put("cardcode", "123");
+        params.put("cardvalue", "44");
+        params.put("userid", "TT");
+
+        ConnectionManager.volleyStringRequest(this, true, null, url, Request.Method.POST, params, new VolleyResponse() {
+            @Override
+            public void onResponse(String response) {
+                Log.e("Response is: ", response.substring(0,500));
+                Toast.makeText(getApplicationContext(), "Response is: "+ response.substring(0,500),
+                        Toast.LENGTH_SHORT).show();
+                /**
+                 * Handle Response
+                 */
+            }
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("Response is: ", error.toString());
+                Toast.makeText(getApplicationContext(), "Response Error: "+ error.toString(),
+                        Toast.LENGTH_SHORT).show();
+                /**
+                 * handle Volley Error
+                 */
+            }
+
+            @Override
+            public void isNetwork(boolean connected) {
+               // Log.e("Network is: ", connected);
+                /**
+                 * True if internet is connected otherwise false
+                 */
+            }
+        });
+
+
+
 /*
         Utility util = new Utility();
         HashMap<String, String> postDataParams = new HashMap<String, String>();
@@ -98,5 +179,6 @@ public class AddCardActivity extends AppCompatActivity {
         Toast.makeText(AddCardActivity.this, "Output= "+ ret, Toast.LENGTH_SHORT).show();
 */
     }
+
 
 }

@@ -4,10 +4,7 @@ import com.got.springbootmongodbgot.Entity.Payment;
 import com.got.springbootmongodbgot.Service.BalanceService;
 import com.got.springbootmongodbgot.Service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,7 +17,11 @@ public class PaymentController {
     private PaymentService paymentService;
 
     @RequestMapping(value = "/pay", method = RequestMethod.POST)
-    public String pay(@RequestParam double amount, @RequestParam String storecode, @RequestParam String userid) {
+    public String addcard(@RequestBody Payment payment){
+   // other way public String pay(@RequestParam double amount, @RequestParam String storecode, @RequestParam String userid) {
+        String storecode = payment.getStoreCode();
+        double amount = payment.getPayAmount();
+        String userid = payment.getUserId();
         if(amount < 0)
             return "This is not a valid amount to pay.";
 
@@ -35,7 +36,7 @@ public class PaymentController {
 
         return ret;
     }
-    //getpayhistory
+
     @RequestMapping("/getpayhistory")
     public List<Payment> getpayhistory(@RequestParam String userid){
         return paymentService.getpaymenthistory(userid);
