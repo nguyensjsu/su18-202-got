@@ -54,7 +54,7 @@ public class AddCardActivity extends AppCompatActivity {
 
     public void btAddCardHandler(View v) {
         System.out.println("btAddCardHandler");
-        final TextView mTextView = (TextView) findViewById(R.id.tvmessage);
+        //final TextView mTextView = (TextView) findViewById(R.id.tvmessage);
         //TODO: Check for valid inputs
 
         //new RestPostAsync().execute("ddg");
