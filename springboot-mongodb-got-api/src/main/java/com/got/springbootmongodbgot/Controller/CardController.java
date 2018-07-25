@@ -5,6 +5,7 @@ import com.got.springbootmongodbgot.Entity.Card;
 import com.got.springbootmongodbgot.Service.CardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.got.springbootmongodbgot.Service.BalanceService;
@@ -21,7 +22,7 @@ public class CardController {
     private BalanceService balanceService;
 
 
-    @RequestMapping("/addcard")
+    @RequestMapping(value = "/addcard", method = RequestMethod.POST)
     public String addcard(@RequestParam String cardid, @RequestParam String cardcode, @RequestParam double cardvalue,@RequestParam String userid) {
         if(cardid.length() == 9 && cardcode.length() == 3)
             return "This is not a valid card. Please enter 9 digits for Card id and 3 digit for Card Code.";

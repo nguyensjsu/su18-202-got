@@ -5,6 +5,7 @@ import com.got.springbootmongodbgot.Service.BalanceService;
 import com.got.springbootmongodbgot.Service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,7 +19,7 @@ public class PaymentController {
     @Autowired
     private PaymentService paymentService;
 
-    @RequestMapping("/pay")
+    @RequestMapping(value = "/pay", method = RequestMethod.POST)
     public String pay(@RequestParam double amount, @RequestParam String storecode, @RequestParam String userid) {
         if(amount < 0)
             return "This is not a valid amount to pay.";
