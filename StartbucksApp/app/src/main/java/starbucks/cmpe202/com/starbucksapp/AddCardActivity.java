@@ -55,7 +55,7 @@ public class AddCardActivity extends AppCompatActivity {
         System.out.println("on Resume");
     }
 
-
+//Post
     public void btAddCardHandler(View v) {
         System.out.println("btAddCardHandler");
         String baseuri = getString(R.string.api_uri);
@@ -77,7 +77,7 @@ public class AddCardActivity extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 Log.e("Response is: ", response);
-                Toast.makeText(getApplicationContext(), "Response is: "+ response.substring(0,500),
+                Toast.makeText(getApplicationContext(), "Response is: "+ response,
                         Toast.LENGTH_SHORT).show();
                 /**
                  * Handle Response
