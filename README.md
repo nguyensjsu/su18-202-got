@@ -6,17 +6,17 @@
 - Yu Xu (Gene)
 
 ## Project Modules
-* [User, Rewards Rest API in PHP - Renato]
-* [Auth, Store Rest API in Express with Heroku/Blockchain deployment - Gene]
-* [Card, Payment N-tier Rest API in Spring Boot with Serverless ECS Cluster deployment - Manoj]
-* [Alexa Voice Interface - Manoj]
-* [Android App Frontend - All Members]
+* User, Rewards Rest API in PHP - [Renato]
+* Auth, Store Rest API in Express with Heroku/Blockchain deployment - [Gene]
+* Card, Payment N-tier Rest API in Spring Boot with Serverless ECS Cluster deployment - [Manoj]
+* Alexa Voice Interface - [Manoj]
+* Android App Frontend - [All Members]
 
 ## Architecture Diagrams
 ### N-tier Rest API in Spring Boot
-![API Architecture](https://github.com/nguyensjsu/su18-202-got/Diagrams/SpringBoot_N-Tier_Architecture.png)
+![API Architecture](https://github.com/nguyensjsu/su18-202-got/blob/master/Diagrams/SpringBoot_N-Tier_Architecture.png)
 ### Serverless ECS Cluster Deployment with docker
-![Deployment Architecture](https://github.com/nguyensjsu/su18-202-got/Diagrams/Serverless_ECS_Cluster.png)
+![Deployment Architecture](https://github.com/nguyensjsu/su18-202-got/blob/master/Diagrams/Serverless_ECS_Cluster.png)
 
 ## Links
 - Project GitHub Repo
