@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">StarbucksApp</string>
-    <string name="api_uri">http://54.160.241.16:8080</string>
+    <string name="api_uri">http://54.89.204.70:8080</string>
 </resources>

@@ -17,11 +17,8 @@ public class PaymentController {
     private PaymentService paymentService;
 
     @RequestMapping(value = "/pay", method = RequestMethod.POST)
-    public String addcard(@RequestBody Payment payment){
-   // other way public String pay(@RequestParam double amount, @RequestParam String storecode, @RequestParam String userid) {
-        String storecode = payment.getStoreCode();
-        double amount = payment.getPayAmount();
-        String userid = payment.getUserId();
+    public String pay(@RequestParam double amount, @RequestParam String storecode, @RequestParam String userid) {
+
         if(amount < 0)
             return "This is not a valid amount to pay.";
 
