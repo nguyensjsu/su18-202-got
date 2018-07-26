@@ -33,11 +33,15 @@
 ## July 19th, 2018                   (Time: 10pm to 10:30pm, Attendy: Renato, Manoj, Gene)
 #### Tasks completed:
 - Addressed co-existence issues of express and next.js servers
+- Create getProfile endpoint
+- No Blocker
 - Deployed blockchain starbucks web app to heroku (minor routing issues still exists)
 
 ## July 20th, 2018                   (Time: 10pm to 10:30pm, Attendy: Renato, Manoj, Gene)
 #### Tasks completed:
 - Encountered technical roadblock: main page route no longer working explicitly or programmatically once the app is deployed to Heroku
+- Deploy API to AWS as Docker Container in Amazon ECS as Serverless strategy
+- Create an endpoint for Add Card API
 
 ## July 21st, 2018                   (Time: 10pm to 10:43pm, Attendy: Renato, Manoj, Gene)
 #### Tasks completed:
@@ -54,3 +58,17 @@
 - Almost all mobile app screens (views only) created;
 - No one is blocked.
 
+## July 24th, 2018                   (Time: 09:35pm to 09:40pm, Attendy: Renato, Manoj, Gene)
+#### Tasks completed:
+- Mobile screen Rest API call code
+- Monoj is blocked - Android app error in code mearge.
+
+## July 25th, 2018                   (Time: 09:35pm to 09:40pm, Attendy: Manoj, Gene) Renato is unavailable due to office commitments
+#### Tasks completed:
+- Mobile screen Rest API call code
+- Monoj is blocked - Android app error in code mearge. 
+
+## July 26th, 2018                   (Time: 09:35pm to 09:40pm, Attendy: Renato, Manoj, Gene)
+#### Tasks completed:
+- Mobile screen Rest API call code
+- .
