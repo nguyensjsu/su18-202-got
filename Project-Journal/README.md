@@ -66,9 +66,15 @@
 ## July 25th, 2018                   (Time: 09:35pm to 09:40pm, Attendy: Manoj, Gene) Renato is unavailable due to office commitments
 #### Tasks completed:
 - Mobile screen Rest API call code
-- Monoj is blocked - Android app error in code mearge. 
+- Monoj is blocked - Android app error in code merge.
 
-## July 26th, 2018                   (Time: 09:35pm to 09:40pm, Attendy: Renato, Manoj, Gene)
+## July 25th, 2018                   (Time: 11:35pm to 12:39am, Attendy: Manoj, Gene, Renato). Second meeting of the day now with Renato present
 #### Tasks completed:
-- Mobile screen Rest API call code
+- Fixed mobile app crash, unblocking Manoj
+- Overview of repo structure
+- Alignment of API response format (JSON) and next steps
+
+## July 26th, 2018                   (Time: 09:35pm to 09:40pm, Attendy: Renato, Manoj, Gene) - tentative
+#### Tasks completed:
+- (To confirm) Mobile screen Rest API call code
 - .
