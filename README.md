@@ -5,14 +5,18 @@
 - Manoj Kumar
 - Yu Xu (Gene)
 
-## Scrum Board
-### July 15th, 2018                   (Time: 8pm to 9:30pm, Attendy: Renato, Manoj, Yu Xu (Gene))
-#### Tasks completed:
-- Defined project scope
-- Defined each members' component
-- Defined XP Core values by team member (Renato: Simplicity; Manoj: Communication; Gene: Courage)
-- Defined technologies to use
+## Project Modules
+* [User, Rewards Rest API in PHP - Renato]
+* [Auth, Store Rest API in Express with Heroku/Blockchain deployment - Gene]
+* [Card, Payment N-tier Rest API in Spring Boot with Serverless ECS Cluster deployment - Manoj]
+* [Alexa Voice Interface - Manoj]
+* [Android App Frontend - All Members]
 
+## Architecture Diagrams
+### N-tier Rest API in Spring Boot
+![API Architecture](https://github.com/nguyensjsu/su18-202-got/Diagrams/SpringBoot_N-Tier_Architecture.png)
+### Serverless ECS Cluster Deployment with docker
+![Deployment Architecture](https://github.com/nguyensjsu/su18-202-got/Diagrams/Serverless_ECS_Cluster.png)
 
 ## Links
 - Project GitHub Repo
