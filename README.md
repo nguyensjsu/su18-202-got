@@ -29,6 +29,10 @@
 
 - Project Journal (on GitHub)
 
+[https://github.com/nguyensjsu/su18-202-got/tree/master/Project-Journal](https://github.com/nguyensjsu/su18-202-got/tree/master/Project-Journal)
+
+- Scrum Board (on GitHub)
+
 [https://github.com/nguyensjsu/su18-202-got/blob/master/Project-Journal/README.md](https://github.com/nguyensjsu/su18-202-got/blob/master/Project-Journal/README.md)
 
 - Google Sprint Task Sheet
