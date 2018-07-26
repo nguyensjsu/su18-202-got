@@ -76,7 +76,7 @@ public class AddCardActivity extends AppCompatActivity {
         ConnectionManager.volleyStringRequest(this, true, null, url, Request.Method.POST, params, new VolleyResponse() {
             @Override
             public void onResponse(String response) {
-                Log.e("Response is: ", response.substring(0,500));
+                Log.e("Response is: ", response);
                 Toast.makeText(getApplicationContext(), "Response is: "+ response.substring(0,500),
                         Toast.LENGTH_SHORT).show();
                 /**
