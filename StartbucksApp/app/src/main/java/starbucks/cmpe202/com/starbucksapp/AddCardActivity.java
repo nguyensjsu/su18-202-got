@@ -37,16 +37,19 @@ import io.gloxey.gnm.managers.ConnectionManager;
 
 public class AddCardActivity extends AppCompatActivity {
 
-    TextView inputCardNumber;
-    TextView inputCardCode;
+    //TextView inputCardNumber;
+    //TextView inputCardCode;
+    String userid = new String();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addcard);
 
-        inputCardNumber = findViewById(R.id.inputCardNumber);
-        inputCardCode = findViewById(R.id.inputCardCode);
+        //inputCardNumber = findViewById(R.id.inputCardNumber);
+        //inputCardCode = findViewById(R.id.inputCardCode);
+
+        userid = "TT";
     }
 
     @Override
@@ -59,18 +62,23 @@ public class AddCardActivity extends AppCompatActivity {
     public void btAddCardHandler(View v) {
         System.out.println("btAddCardHandler");
         String baseuri = getString(R.string.api_uri);
-        //final TextView mTextView = (TextView) findViewById(R.id.tvmessage);
-        //TODO: Check for valid inputs
+        final TextView tvCardId = (TextView) findViewById(R.id.inputCardNumber);
+        final TextView tvCardCode = (TextView) findViewById(R.id.inputCardCode);
+        final TextView tvAmount = (TextView) findViewById(R.id.inputAmount);
+        String CardIdval = tvCardId.getText().toString();
+        String CardCodeval = tvCardId.getText().toString();
+        String CardAmountVal = tvAmount.getText().toString();
+
 
 
         //Reference doc https://github.com/adnanbinmustafa/Gloxey-Network-Manager#1-volley-stringrequest
         String url = baseuri+"/addcard";
 
         HashMap<String, String> params = new HashMap<>();
-        params.put("cardid", "123456789");
-        params.put("cardcode", "123");
-        params.put("cardvalue", "44");
-        params.put("userid", "TT");
+        params.put("cardid", CardIdval);
+        params.put("cardcode", CardCodeval);
+        params.put("cardvalue", CardAmountVal);
+        params.put("userid", userid);
 
 
         ConnectionManager.volleyStringRequest(this, true, null, url, Request.Method.POST, params, new VolleyResponse() {
