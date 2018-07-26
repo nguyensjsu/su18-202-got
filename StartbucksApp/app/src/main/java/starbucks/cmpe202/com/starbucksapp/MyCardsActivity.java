@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -46,11 +47,14 @@ public class MyCardsActivity extends AppCompatActivity {
         System.out.println("btnPayHandler");
         String baseuri = getString(R.string.api_uri);
         //final TextView mTextView = (TextView) findViewById(R.id.tvmessage);
+
+        final TextView tvPayAmount = (TextView) findViewById(R.id.inputPayAmount);
+        String payAmountVal = tvPayAmount.getText().toString();
         //Reference doc https://github.com/adnanbinmustafa/Gloxey-Network-Manager#1-volley-stringrequest
         String url = baseuri+"/pay";
 
         HashMap<String, String> params = new HashMap<>();
-        params.put("amount", "20");
+        params.put("amount", payAmountVal);
         params.put("storecode", "WestfieldMall");
         params.put("userid", userid);
 

@@ -66,7 +66,7 @@ public class AddCardActivity extends AppCompatActivity {
         final TextView tvCardCode = (TextView) findViewById(R.id.inputCardCode);
         final TextView tvAmount = (TextView) findViewById(R.id.inputAmount);
         String CardIdval = tvCardId.getText().toString();
-        String CardCodeval = tvCardId.getText().toString();
+        String CardCodeval = tvCardCode.getText().toString();
         String CardAmountVal = tvAmount.getText().toString();
 
 
