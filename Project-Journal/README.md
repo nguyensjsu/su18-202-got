@@ -76,5 +76,6 @@
 
 ## July 26th, 2018                   (Time: 09:35pm to 09:40pm, Attendy: Renato, Manoj, Gene) - tentative
 #### Tasks completed:
-- (To confirm) Mobile screen Rest API call code
-- .
+- (To confirm) Mobile screen Rest API call code - Fixed
+- Checked in source ppt for Architecture Diagrams.
+- Alexa Skill code done
