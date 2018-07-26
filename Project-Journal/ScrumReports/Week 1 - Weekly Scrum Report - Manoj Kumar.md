@@ -1,5 +1,5 @@
 # Weekly Scrum Report  
--- We just got one full week so keeping detailed Scrum Report is in Readme.md file.
+-- We just got one full week so keeping this short. Detailed Scrum Report is in Readme.md file.
 
 
 ## Stand-up Questions
