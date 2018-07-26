@@ -29,7 +29,7 @@
 
 - Project Journal (on GitHub)
 
-[https://github.com/nguyensjsu/su18-202-got/blob/master/Project-Journal/README.md](https://github.com/nguyensjsu/su18-202-got/edit/master/README.md)
+[https://github.com/nguyensjsu/su18-202-got/blob/master/Project-Journal/README.md](https://github.com/nguyensjsu/su18-202-got/blob/master/Project-Journal/README.md)
 
 - Google Sprint Task Sheet
 
