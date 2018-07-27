@@ -13,7 +13,7 @@ const requireGoogleOAuth = passport.authenticate("google", { session: false });
 
 module.exports = function(app) {
   app.get("/", requireAuth, function(req, res) {
-    res.send(req.user.id);
+    res.send({id: req.user.id});
   });
   app.get("/googlesignup", requireGoogleCallBack);
   app.get("/googlesignup/callback", requireGoogleOAuth, Authentication.googlesignup);
