@@ -13,10 +13,12 @@
 * Android App Frontend - [All Members]
 
 ## Architecture Diagrams
-### N-tier Rest API in Spring Boot [Manoj]
-![API Architecture](https://github.com/nguyensjsu/su18-202-got/blob/master/Diagrams/SpringBoot_N-Tier_Architecture.png)
+### Rest APIs via Spring Boot & Nodejs  [Manoj, Gene]
+![API Architecture](https://github.com/nguyensjsu/su18-202-got/blob/master/Diagrams/Architecture.png)
 ### Serverless ECS Cluster Deployment with docker [Manoj]
 ![Deployment Architecture](https://github.com/nguyensjsu/su18-202-got/blob/master/Diagrams/Serverless_ECS_Cluster.png)
+### Blockchain Starbucks DAPP [Gene]
+![API Architecture](https://github.com/nguyensjsu/su18-202-got/blob/master/Diagrams/Blockchain_Architecture.png)
 
 ## Links
 - Project GitHub Repo
