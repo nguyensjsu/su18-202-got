@@ -85,6 +85,9 @@ public class MainActivity extends AppCompatActivity {
 
                 UserManager.getInstance().getUser().setId("5b593fcc7df93600145bce42");
 
+                Intent intent = new Intent(getApplicationContext(), MyCardsActivity.class);
+                startActivity(intent);
+
             }
 
             @Override
@@ -108,8 +111,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-//        Intent intent = new Intent(this, MyCardsActivity.class);
-//        startActivity(intent);
+
     }
 
     public void btSignupHandler(View v) {
