@@ -45,10 +45,9 @@ function insertOrUpdateUserAccount($userId, $name, $email) {
     $isUpdate = ($res->num_rows == 0) ? false: true;
 
 	if ($isUpdate){
-		$datetimeNow = getDatetimeNowString();
 		$res = doQueryInDatabase("UPDATE users SET name ='$name', email = '$email' WHERE user_id = '$userId'");
 	} else {
-		$res = doQueryInDatabase("INSERT INTO users (name, email) VALUES ('$name', '$email')");
+		$res = doQueryInDatabase("INSERT INTO users (name, email, user_id) VALUES ('$name', '$email', '$user_id')");
 	}
 
 	return $res;
