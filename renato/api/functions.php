@@ -60,6 +60,50 @@ function checkAuthorization($onlyCheckAPIKey = false) {
 	return $userId;
 }
 
+//
+// exmaple of use:
+// $inputs = getAndCheckParams(array(
+// 	array("key" => "filename", "type" => "string", "required" => true),
+// 	array("key" => "contents", "type" => "string", "required" => false),
+// 	array("key" => "fileObject", "type" => "file",  "required" => false),
+// ));
+// http://php.net/manual/en/function.gettype.php
+function getAndcheckParams($list) {
+	$params = array();
+	foreach ($list as &$param) {
+		$key = $param['key'];
+		$type = $param['type'];
+		$required = $param['required'];
+
+		$origin = $_REQUEST;
+		if ($type == "file") {
+			$origin = $_FILES;
+			$type = "array";
+		}
+
+		if ($required && !isset($origin[$key]) )
+			returnErrorRequiredParams("Missing Required Param '$key'");
+
+		if (isset($origin[$key])) {
+			$value = $origin[$key];
+
+			if ($type === "boolean")
+			 	$value = (boolean) $value;
+
+			if (gettype($value) != $type)
+				returnErrorRequiredParams("Wrong type for key '$key'");
+
+			if ($required && $type == "string" && empty($value))
+				returnErrorRequiredParams("Missing");
+
+			$params[$key] = $value;
+	 	}
+	}
+	unset($param);
+
+	return $params;
+}
+
 
 function getUserIdFromToken($token){
 	do_log("getUserIdFromToken");
@@ -111,6 +155,12 @@ function returnErrorDatabase(){
 function returnErrorNotAuthenticated($errorMsgDetail){
     returnError(2, "You are not logged in. Please sign in.", $errorMsgDetail);
 }
+
+function returnErrorRequiredParams($errorMsgDetail = null){
+    returnError(3, "Missing/Invalid params", $errorMsgDetail);
+}
+
+
 
 function returnError($code, $msg, $msgDetail = null){
 	$ret = new StdClass();
