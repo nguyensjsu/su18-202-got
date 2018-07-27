@@ -74,9 +74,12 @@
 - Overview of repo structure
 - Alignment of API response format (JSON) and next steps
 
+
 ## July 26th, 2018                   (Time: 10:35pm to 12:00am, Attendy: Renato, Manoj, Gene)
 #### Tasks completed:
 - Renato confirmed that all his API modules are completed
 - Checked in source ppt for Architecture Diagrams
 - Alexa Skill code done
 - Mobile App API integration started
+- Diagrams updated
+
