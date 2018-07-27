@@ -5,6 +5,7 @@ import com.got.springbootmongodbgot.Service.BalanceService;
 import com.got.springbootmongodbgot.Service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
@@ -30,6 +31,13 @@ public class PaymentController {
 
         //do payment
         String ret = balanceService.deductPaymentBalance(amount, userid); //updating balance as per card
+
+        final String uri = "http://cmpe202.redbeach.net/addRewards.php?serverKey=202cmpepayapi&userId=" + userid + "&amount=" + amount;
+
+        RestTemplate restTemplate = new RestTemplate();
+        String result = restTemplate.getForObject(uri, String.class);
+
+        //System.out.println(result);
 
         return ret;
     }
