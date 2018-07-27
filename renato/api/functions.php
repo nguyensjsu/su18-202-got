@@ -39,6 +39,21 @@ function getRewardsBalanceFromUserWithId($userId){
 }
 
 
+function insertOrUpdateUserAccount($userId, $name, $email) {
+
+	$res = doQueryInDatabase("SELECT user_id FROM users WHERE user_id = '$userId' LIMIT 1");
+    $isUpdate = ($res->num_rows == 0) ? false: true;
+
+	if ($isUpdate){
+		$datetimeNow = getDatetimeNowString();
+		$res = doQueryInDatabase("UPDATE users SET name ='$name', email = '$email' WHERE user_id = '$userId'");
+	} else {
+		$res = doQueryInDatabase("INSERT INTO users (name, email) VALUES ('$name', '$email')");
+	}
+
+	return $res;
+}
+
 // - - - - - - - - - - - - -
 // Aux functions
 
