@@ -49,7 +49,8 @@ public class AddCardActivity extends AppCompatActivity {
         //inputCardNumber = findViewById(R.id.inputCardNumber);
         //inputCardCode = findViewById(R.id.inputCardCode);
 
-        userid = "TT";
+        //userid = "TT";
+        userid = UserManager.getInstance().getUser().getId();
     }
 
     @Override

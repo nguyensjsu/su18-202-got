@@ -24,7 +24,7 @@ public class MyCardsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mycards);
 
-        userid = "TT";
+        userid = UserManager.getInstance().getUser().getId();
 
     }
 
