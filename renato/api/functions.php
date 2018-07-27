@@ -4,6 +4,8 @@ date_default_timezone_set('America/Los_Angeles');
 
 define("API_KEY", "cmpe202kungfubelikewater"); // key to protect our API from random requests
 
+define("SERVER2SERVER_KEY", "202cmpepayapi"); // key to protect our API from random requests
+
 
 require 'db.php';
 
@@ -23,6 +25,28 @@ function doQueryInDatabase($query) {
 		return $res;
 
 	returnErrorDatabase();
+}
+
+
+function addReward($userId, $amount){
+
+  $newBalance = $amount;
+  $isUpdate = false;
+  $res = doQueryInDatabase("SELECT balance FROM rewards WHERE user_id = '$userId' LIMIT 1");
+  if ($res->num_rows == 0){
+    $isUpdate = false;
+  } else {
+    $row = $res->fetch_assoc();
+    $newBalance = $newBalance + $row['balance'];
+    $isUpdate = true;
+  }
+
+  if ($isUpdate){
+    $res = doQueryInDatabase("UPDATE rewards SET balance ='$newBalance'WHERE user_id = '$userId'");
+  } else {
+    $res = doQueryInDatabase("INSERT INTO rewards (balance, user_id) VALUES ($newBalance, '$userId')");
+  }
+  return true;
 }
 
 
@@ -83,6 +107,13 @@ function checkAuthorization($onlyCheckAPIKey = false) {
 		returnErrorNotAuthenticated("Invalid User Token");
 
 	return $userId;
+}
+
+function checkServerAuthorization() {
+  if (!isset($_REQUEST["serverKey"]) || $_REQUEST["serverKey"] !== SERVER2SERVER_KEY )
+    returnErrorNotAuthenticated("Wrong SERVER Key");
+
+  return true;
 }
 
 //
