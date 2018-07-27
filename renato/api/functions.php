@@ -89,6 +89,34 @@ function returnError($code, $msg, $msgDetail = null){
 }
 
 
+// - - - - - - - - - - - -
+// LOG FUNCTIONS
+
+function do_log_request() {
+    $fd = fopen(__DIR__ . "/log.txt", "a");
+    fwrite($fd, "==================================================\n");
+    fwrite($fd, "Date: ".date('r')."\n");
+    fwrite($fd, "Original URL: ".$_SERVER['REQUEST_URI']."\n");
+    fwrite($fd, "Parameters:\n");
+    foreach ($_REQUEST as $k => $v):
+        if (strlen($v) > 300 && $k != 'access_token'):
+            fwrite($fd, "{$k} => ".substr($v,0,300)." (...)\n");
+        else:
+            fwrite($fd, "{$k} => {$v}\n");
+        endif;
+    endforeach;
+    fclose($fd);
+} // do_log
+
+
+function do_log($str) {
+    $fd = fopen(__DIR__ . "/log.txt", "a");
+    fwrite($fd, date('r'). ': ' . $str."\n");
+    fclose($fd);
+
+} // do_log
+
+
 // - - - - - - - - - - - - -
 // Return Json
 
