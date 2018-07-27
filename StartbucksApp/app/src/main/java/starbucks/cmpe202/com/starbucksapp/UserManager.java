@@ -19,5 +19,11 @@ public class UserManager {
         return this.user;
     }
 
+    public void clear(){
+        instance = null;
+    }
+
+
+
 
 }

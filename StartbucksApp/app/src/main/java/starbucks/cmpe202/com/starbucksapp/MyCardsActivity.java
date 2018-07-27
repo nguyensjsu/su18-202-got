@@ -20,6 +20,9 @@ import io.gloxey.gnm.managers.ConnectionManager;
 public class MyCardsActivity extends AppCompatActivity {
 
     String userid = new String();
+
+    TextView tvUsername;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,12 +30,15 @@ public class MyCardsActivity extends AppCompatActivity {
 
         userid = UserManager.getInstance().getUser().getId();
 
+        tvUsername = findViewById(R.id.tvUsername);
+
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         System.out.println("on Resume");
+        tvUsername.setText(UserManager.getInstance().getUser().getName());
     }
 
 
@@ -245,6 +251,14 @@ public class MyCardsActivity extends AppCompatActivity {
         });
 
 
+    }
+
+
+    public void btnLogoutHandler(View v) {
+        UserManager.getInstance().clear();
+
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
     }
 
 }
