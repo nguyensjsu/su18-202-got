@@ -40,13 +40,19 @@ function addReward($userId, $amount){
     $newBalance = $newBalance + $row['balance'];
     $isUpdate = true;
   }
+  if ($newBalance <0)
+    returnErrorNotEnoughBalance();
 
   if ($isUpdate){
     $res = doQueryInDatabase("UPDATE rewards SET balance ='$newBalance'WHERE user_id = '$userId'");
   } else {
     $res = doQueryInDatabase("INSERT INTO rewards (balance, user_id) VALUES ($newBalance, '$userId')");
   }
-  return true;
+
+  $result = [];
+  $result['result'] = true;
+  $result['balance'] = $newBalance;
+  return $result;
 }
 
 
@@ -216,6 +222,9 @@ function returnErrorRequiredParams($errorMsgDetail = null){
     returnError(3, "Missing/Invalid params", $errorMsgDetail);
 }
 
+function returnErrorNotEnoughBalance($errorMsgDetail = null){
+    returnError(4, "Not Enough balance", $errorMsgDetail);
+}
 
 
 function returnError($code, $msg, $msgDetail = null){

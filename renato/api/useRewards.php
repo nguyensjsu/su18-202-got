@@ -15,7 +15,7 @@ $userId = $inputs["userId"];
 
 
 if ($userId) {
-	$result = addReward($userId, $amount);
+	$result = addReward($userId, - $amount);
 	return returnJSON($result);
 }
 
