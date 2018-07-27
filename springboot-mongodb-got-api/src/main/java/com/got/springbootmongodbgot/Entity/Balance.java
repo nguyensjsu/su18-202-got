@@ -7,38 +7,38 @@ import java.time.LocalDateTime;
 public class Balance {
     @Id
     String id;
-    String UserId;
-    int Balance;
-    LocalDateTime LastUpdatedOn;
+    String userid;
+    double balance;
+    LocalDateTime lastupdatedon;
 
-    public Balance(String UserId, int Balance, LocalDateTime LastUpdatedOn) {
-        this.UserId = UserId;
-        this.Balance = Balance;
-        this.LastUpdatedOn = LastUpdatedOn;
+    public Balance(String userid, double balance, LocalDateTime lastupdatedon) {
+        this.userid = userid;
+        this.balance = balance;
+        this.lastupdatedon = lastupdatedon;
     }
 
     public String getUserId() {
-        return UserId;
+        return userid;
     }
 
     public void setUserId(String userId) {
-        UserId = userId;
+        this.userid = userId;
     }
 
-    public int getBalance() {
-        return Balance;
+    public double getBalance() {
+        return balance;
     }
 
-    public void setBalance(int balance) {
-        Balance = balance;
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 
     public LocalDateTime getLastUpdatedOn() {
-        return LastUpdatedOn;
+        return this.lastupdatedon;
     }
 
     public void setLastUpdatedOn(LocalDateTime lastUpdatedOn) {
-        LastUpdatedOn = lastUpdatedOn;
+        this.lastupdatedon = lastUpdatedOn;
     }
 }
 

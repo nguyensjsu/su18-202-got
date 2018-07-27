@@ -33,13 +33,49 @@
 ## July 19th, 2018                   (Time: 10pm to 10:30pm, Attendy: Renato, Manoj, Gene)
 #### Tasks completed:
 - Addressed co-existence issues of express and next.js servers
+- Create getProfile endpoint
+- No Blocker
 - Deployed blockchain starbucks web app to heroku (minor routing issues still exists)
 
-## July 19th, 2018                   (Time: 10pm to 10:30pm, Attendy: Renato, Manoj, Gene)
+## July 20th, 2018                   (Time: 10pm to 10:30pm, Attendy: Renato, Manoj, Gene)
 #### Tasks completed:
 - Encountered technical roadblock: main page route no longer working explicitly or programmatically once the app is deployed to Heroku
+- Deploy API to AWS as Docker Container in Amazon ECS as Serverless strategy
+- Create an endpoint for Add Card API
 
 ## July 21st, 2018                   (Time: 10pm to 10:43pm, Attendy: Renato, Manoj, Gene)
 #### Tasks completed:
 - Aligned Login mechanism and token generation
 - Manoj is blocked: Waiting for Android Mobile Project to star implementing the integration app-API.
+
+## July 22st, 2018                   (Time: 10:30pm to 10:40pm, Attendy: Renato, Manoj, Gene)
+#### Tasks completed:
+- Implemented auth APIs that enable: 1) login with email & password, API responds with token; 2) sign up with email & password, API responds with token; 3) google sigle sign-on with google account, API responds with token; 4) customer re-visit with valid token, API responds with user ID.
+- Mobile app project created (which as a block for Manoj).
+
+## July 23rd, 2018                   (Time: 09:35pm to 09:40pm, Attendy: Renato, Manoj, Gene)
+#### Tasks completed:
+- Almost all mobile app screens (views only) created;
+- No one is blocked.
+
+## July 24th, 2018                   (Time: 09:35pm to 09:40pm, Attendy: Renato, Manoj, Gene)
+#### Tasks completed:
+- Mobile screen Rest API call code
+- Monoj is blocked - Android app error in code mearge.
+
+## July 25th, 2018                   (Time: 09:35pm to 09:40pm, Attendy: Manoj, Gene) Renato is unavailable due to office commitments
+#### Tasks completed:
+- Mobile screen Rest API call code
+- Monoj is blocked - Android app error in code merge.
+
+## July 25th, 2018                   (Time: 11:35pm to 12:39am, Attendy: Manoj, Gene, Renato). Second meeting of the day now with Renato present
+#### Tasks completed:
+- Fixed mobile app crash, unblocking Manoj
+- Overview of repo structure
+- Alignment of API response format (JSON) and next steps
+
+## July 26th, 2018                   (Time: 09:35pm to 09:40pm, Attendy: Renato, Manoj, Gene) - tentative
+#### Tasks completed:
+- (To confirm) Mobile screen Rest API call code - Fixed
+- Checked in source ppt for Architecture Diagrams.
+- Alexa Skill code done

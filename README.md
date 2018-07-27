@@ -3,16 +3,20 @@
 ## Team - Gang of Three(GoT)
 - Renato Cordeiro 
 - Manoj Kumar
-- Gene
+- Yu Xu (Gene)
 
-## Scrum Board
-### July 15th, 2018                   (Time: 8pm to 9:30pm, Attendy: Renato, Manoj, Gene)
-#### Tasks completed:
-- Defined project scope
-- Defined each members' component
-- Defined XP Core values by team member (Renato: Simplicity; Manoj: Communication; Gene: Courage)
-- Defined technologies to use
+## Project Modules
+* User, Rewards Rest API in PHP - [Renato]
+* Auth, Store Rest API in Express with Heroku/Blockchain deployment - [Gene]
+* Card, Payment N-tier Rest API in Spring Boot with Serverless ECS Cluster deployment - [Manoj]
+* Alexa Voice Interface - [Manoj]
+* Android App Frontend - [All Members]
 
+## Architecture Diagrams
+### N-tier Rest API in Spring Boot [Manoj]
+![API Architecture](https://github.com/nguyensjsu/su18-202-got/blob/master/Diagrams/SpringBoot_N-Tier_Architecture.png)
+### Serverless ECS Cluster Deployment with docker [Manoj]
+![Deployment Architecture](https://github.com/nguyensjsu/su18-202-got/blob/master/Diagrams/Serverless_ECS_Cluster.png)
 
 ## Links
 - Project GitHub Repo
@@ -25,7 +29,11 @@
 
 - Project Journal (on GitHub)
 
-[https://github.com/nguyensjsu/su18-202-got/edit/master/README.md](https://github.com/nguyensjsu/su18-202-got/edit/master/README.md)
+[https://github.com/nguyensjsu/su18-202-got/tree/master/Project-Journal](https://github.com/nguyensjsu/su18-202-got/tree/master/Project-Journal)
+
+- Scrum Board (on GitHub)
+
+[https://github.com/nguyensjsu/su18-202-got/blob/master/Project-Journal/README.md](https://github.com/nguyensjsu/su18-202-got/blob/master/Project-Journal/README.md)
 
 - Google Sprint Task Sheet
 

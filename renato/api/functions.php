@@ -4,13 +4,11 @@ date_default_timezone_set('America/Los_Angeles');
 
 define("API_KEY", "cmpe202kungfubelikewater"); // key to protect our API from random requests
 
+define("SERVER2SERVER_KEY", "202cmpepayapi"); // key to protect our API from random requests
+
 
 require 'db.php';
 
-
-function getUserIdFromToken($token){
-	return $token; // for this first version, we are going to use the userId as token
-}
 
 
 
@@ -30,18 +28,71 @@ function doQueryInDatabase($query) {
 }
 
 
+function addReward($userId, $amount){
+
+  $newBalance = $amount;
+  $isUpdate = false;
+  $res = doQueryInDatabase("SELECT balance FROM rewards WHERE user_id = '$userId' LIMIT 1");
+  if ($res->num_rows == 0){
+    $isUpdate = false;
+  } else {
+    $row = $res->fetch_assoc();
+    $newBalance = $newBalance + $row['balance'];
+    $isUpdate = true;
+  }
+  if ($newBalance <0)
+    returnErrorNotEnoughBalance();
+
+  if ($isUpdate){
+    $res = doQueryInDatabase("UPDATE rewards SET balance ='$newBalance'WHERE user_id = '$userId'");
+  } else {
+    $res = doQueryInDatabase("INSERT INTO rewards (balance, user_id) VALUES ($newBalance, '$userId')");
+  }
+
+  $result = [];
+  $result['result'] = true;
+  $result['balance'] = $newBalance;
+  return $result;
+}
+
+
 function getRewardsBalanceFromUserWithId($userId){
 	global $mysqli;
-    $email = mysqli_real_escape_string($mysqli, $email);
+    $userId = mysqli_real_escape_string($mysqli, $userId);
     $res = doQueryInDatabase("SELECT balance FROM rewards WHERE user_id = '$userId' LIMIT 1");
     if ($res->num_rows == 0)
-        return null;
+        return 0;
 
     $row = $res->fetch_assoc();
 
     return $row['balance'];
 }
 
+
+function insertOrUpdateUserAccount($userId, $name, $email) {
+
+	$userObj = getUserObj($userId);
+
+	if ($userObj != null){
+		$res = doQueryInDatabase("UPDATE users SET name ='$name', email = '$email' WHERE user_id = '$userId'");
+	} else {
+		$res = doQueryInDatabase("INSERT INTO users (name, email, user_id) VALUES ('$name', '$email', '$user_id')");
+	}
+
+	return $res;
+}
+
+
+function getUserObj($userId) {
+
+	$res = doQueryInDatabase("SELECT name, email, user_id as 'id' FROM users WHERE user_id = '$userId' LIMIT 1");
+    if ($res->num_rows == 0)
+    	return null;
+
+  $row = $res->fetch_assoc();
+
+	return $row;
+}
 
 // - - - - - - - - - - - - -
 // Aux functions
@@ -58,12 +109,99 @@ function checkAuthorization($onlyCheckAPIKey = false) {
 		returnErrorNotAuthenticated("Missing User Token");
 
 	$userId = getUserIdFromToken($_REQUEST["token"]);
-	if ($userObj== false)
+	if ($userId== null)
 		returnErrorNotAuthenticated("Invalid User Token");
 
 	return $userId;
 }
 
+function checkServerAuthorization() {
+  if (!isset($_REQUEST["serverKey"]) || $_REQUEST["serverKey"] !== SERVER2SERVER_KEY )
+    returnErrorNotAuthenticated("Wrong SERVER Key");
+
+  return true;
+}
+
+//
+// exmaple of use:
+// $inputs = getAndCheckParams(array(
+// 	array("key" => "filename", "type" => "string", "required" => true),
+// 	array("key" => "contents", "type" => "string", "required" => false),
+// 	array("key" => "fileObject", "type" => "file",  "required" => false),
+// ));
+// http://php.net/manual/en/function.gettype.php
+function getAndcheckParams($list) {
+	$params = array();
+	foreach ($list as &$param) {
+		$key = $param['key'];
+		$type = $param['type'];
+		$required = $param['required'];
+
+		$origin = $_REQUEST;
+		if ($type == "file") {
+			$origin = $_FILES;
+			$type = "array";
+		}
+
+		if ($required && !isset($origin[$key]) )
+			returnErrorRequiredParams("Missing Required Param '$key'");
+
+		if (isset($origin[$key])) {
+			$value = $origin[$key];
+
+			if ($type === "boolean")
+			 	$value = (boolean) $value;
+
+			if (gettype($value) != $type)
+				returnErrorRequiredParams("Wrong type for key '$key'");
+
+			if ($required && $type == "string" && empty($value))
+				returnErrorRequiredParams("Missing");
+
+			$params[$key] = $value;
+	 	}
+	}
+	unset($param);
+
+	return $params;
+}
+
+
+function getUserIdFromToken($token){
+	do_log("getUserIdFromToken");
+   $curl = curl_init();
+
+   curl_setopt_array($curl, array(
+   CURLOPT_URL => "https://safe-caverns-72745.herokuapp.com/",
+   CURLOPT_RETURNTRANSFER => true,
+   CURLOPT_ENCODING => "",
+   CURLOPT_MAXREDIRS => 10,
+   CURLOPT_TIMEOUT => 30,
+   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+   CURLOPT_CUSTOMREQUEST => "GET",
+   //CURLOPT_POSTFIELDS => "repo=".$repoName,
+   CURLOPT_HTTPHEADER => array(
+    "Cache-Control: no-cache",
+    "Content-Type: application/x-www-form-urlencoded",
+    //"Postman-Token: 821acf75-e555-4d23-8f23-2f062a7a5638",
+    "authorization: $token",
+   ),
+   ));
+
+   do_log("going to send request");
+   $response = curl_exec($curl);
+   $err = curl_error($curl);
+
+   curl_close($curl);
+
+   if ($err) {
+      do_log("cURL Error #:" . $err);
+   		return ;
+   	}
+  do_log("result=" .  $response);
+  $json = json_decode($response, true);
+  return $json["id"];
+}
 
 
 
@@ -80,6 +218,15 @@ function returnErrorNotAuthenticated($errorMsgDetail){
     returnError(2, "You are not logged in. Please sign in.", $errorMsgDetail);
 }
 
+function returnErrorRequiredParams($errorMsgDetail = null){
+    returnError(3, "Missing/Invalid params", $errorMsgDetail);
+}
+
+function returnErrorNotEnoughBalance($errorMsgDetail = null){
+    returnError(4, "Not Enough balance", $errorMsgDetail);
+}
+
+
 function returnError($code, $msg, $msgDetail = null){
 	$ret = new StdClass();
 	$ret->errorCode = $code;
@@ -87,6 +234,34 @@ function returnError($code, $msg, $msgDetail = null){
 	$ret->errorMessageDetail = $msgDetail;
     returnJSON($ret);
 }
+
+
+// - - - - - - - - - - - -
+// LOG FUNCTIONS
+
+function do_log_request() {
+    $fd = fopen(__DIR__ . "/log.txt", "a");
+    fwrite($fd, "==================================================\n");
+    fwrite($fd, "Date: ".date('r')."\n");
+    fwrite($fd, "Original URL: ".$_SERVER['REQUEST_URI']."\n");
+    fwrite($fd, "Parameters:\n");
+    foreach ($_REQUEST as $k => $v):
+        if (strlen($v) > 300 && $k != 'access_token'):
+            fwrite($fd, "{$k} => ".substr($v,0,300)." (...)\n");
+        else:
+            fwrite($fd, "{$k} => {$v}\n");
+        endif;
+    endforeach;
+    fclose($fd);
+} // do_log
+
+
+function do_log($str) {
+    $fd = fopen(__DIR__ . "/log.txt", "a");
+    fwrite($fd, date('r'). ': ' . $str."\n");
+    fclose($fd);
+
+} // do_log
 
 
 // - - - - - - - - - - - - -
