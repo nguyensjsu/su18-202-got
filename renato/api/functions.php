@@ -8,10 +8,6 @@ define("API_KEY", "cmpe202kungfubelikewater"); // key to protect our API from ra
 require 'db.php';
 
 
-function getUserIdFromToken($token){
-	return $token; // for this first version, we are going to use the userId as token
-}
-
 
 
 // - - - - - - - - - - - - -
@@ -32,10 +28,10 @@ function doQueryInDatabase($query) {
 
 function getRewardsBalanceFromUserWithId($userId){
 	global $mysqli;
-    $email = mysqli_real_escape_string($mysqli, $email);
+    $userId = mysqli_real_escape_string($mysqli, $userId);
     $res = doQueryInDatabase("SELECT balance FROM rewards WHERE user_id = '$userId' LIMIT 1");
     if ($res->num_rows == 0)
-        return null;
+        return 0;
 
     $row = $res->fetch_assoc();
 
@@ -58,12 +54,48 @@ function checkAuthorization($onlyCheckAPIKey = false) {
 		returnErrorNotAuthenticated("Missing User Token");
 
 	$userId = getUserIdFromToken($_REQUEST["token"]);
-	if ($userObj== false)
+	if ($userId== null)
 		returnErrorNotAuthenticated("Invalid User Token");
 
 	return $userId;
 }
 
+
+function getUserIdFromToken($token){
+	do_log("getUserIdFromToken");
+   $curl = curl_init();
+
+   curl_setopt_array($curl, array(
+   CURLOPT_URL => "https://safe-caverns-72745.herokuapp.com/",
+   CURLOPT_RETURNTRANSFER => true,
+   CURLOPT_ENCODING => "",
+   CURLOPT_MAXREDIRS => 10,
+   CURLOPT_TIMEOUT => 30,
+   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+   CURLOPT_CUSTOMREQUEST => "GET",
+   //CURLOPT_POSTFIELDS => "repo=".$repoName,
+   CURLOPT_HTTPHEADER => array(
+    "Cache-Control: no-cache",
+    "Content-Type: application/x-www-form-urlencoded",
+    //"Postman-Token: 821acf75-e555-4d23-8f23-2f062a7a5638",
+    "authorization: $token",
+   ),
+   ));
+
+   do_log("going to send request");
+   $response = curl_exec($curl);
+   $err = curl_error($curl);
+
+   curl_close($curl);
+
+   if ($err) {
+      do_log("cURL Error #:" . $err);
+   		return ;
+   	}
+  do_log("result=" .  $response);
+  $json = json_decode($response, true);
+  return $json["id"];
+}
 
 
 
