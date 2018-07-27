@@ -1,24 +1,29 @@
 # Project - Startbucks App
 
 ## Team - Gang of Three(GoT)
-- Renato Cordeiro 
-- Manoj Kumar
-- Yu Xu (Gene)
+- Renato Cordeiro (foobar123asdf & renatosc)
+- Manoj Kumar (manojknit)
+- Yu Xu (Gene) (yxu02)
 
 ## Project Modules
-* User, Rewards Rest API in PHP - [Renato]
+* User, Rewards Rest API in PHP + MySQL - [Renato]
 * Auth, Store Rest API in Express with Heroku/Blockchain deployment - [Gene]
 * Card, Payment N-tier Rest API in Spring Boot with Serverless ECS Cluster deployment - [Manoj]
 * Alexa Voice Interface - [Manoj]
 * Android App Frontend - [All Members]
 
 ## Architecture Diagrams
+
+### Overall system - Microservices approach [Renato]
+![System Architecture](https://github.com/nguyensjsu/su18-202-got/blob/master/Diagrams/API_Architecture.png)
 ### Rest APIs via Spring Boot & Nodejs  [Manoj, Gene]
 ![API Architecture](https://github.com/nguyensjsu/su18-202-got/blob/master/Diagrams/Architecture.png)
 ### Serverless ECS Cluster Deployment with docker [Manoj]
 ![Deployment Architecture](https://github.com/nguyensjsu/su18-202-got/blob/master/Diagrams/Serverless_ECS_Cluster.png)
 ### Blockchain Starbucks DAPP [Gene]
 ![API Architecture](https://github.com/nguyensjsu/su18-202-got/blob/master/Diagrams/Blockchain_Architecture.png)
+### PHP APIs with MySQL database [Renato]
+![API Architecture](https://github.com/nguyensjsu/su18-202-got/blob/master/renato/modules.png)
 
 ## Links
 - Project GitHub Repo
