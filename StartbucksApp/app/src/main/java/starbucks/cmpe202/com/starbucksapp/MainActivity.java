@@ -40,6 +40,63 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void getUserInfo(String token){
+
+        String url = Server.ENDPOINT_USER + "/getUserAccount.php";
+
+        HashMap<String, String> params = new HashMap<>();
+        params.put("token", token);
+        params.put("apiKey", "cmpe202kungfubelikewater");
+
+
+
+        ConnectionManager.volleyStringRequest(this, true, null, url, Request.Method.POST, params,new VolleyResponse() {
+
+            @Override
+            public void onResponse (String response){
+                Log.d("response", response);
+
+                final UserModel user = new Gson().fromJson(response, UserModel.class);
+
+                if (user.getId() == null) {
+                    final ApiErrorResponseModel error = new Gson().fromJson(response, ApiErrorResponseModel.class);
+                    Toast.makeText(getApplicationContext(), "Response Error: "+ error.errorMessage, Toast.LENGTH_SHORT).show();
+                    return ;
+                }
+
+                Log.d("USER", user.getId());
+                Log.d("USER", user.getEmail());
+                UserManager.getInstance().getUser().setUser(user);
+
+                Log.d("UserManager", UserManager.getInstance().getUser().getId());
+                Log.d("UserManager", UserManager.getInstance().getUser().getEmail());
+
+                Intent intent = new Intent(getApplicationContext(), MyCardsActivity.class);
+                startActivity(intent);
+
+            }
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("Response is: ", error.toString());
+                Toast.makeText(getApplicationContext(), "Response Error: "+ error.toString(), Toast.LENGTH_SHORT).show();
+                /**
+                 * handle Volley Error
+                 */
+            }
+
+            @Override
+            public void isNetwork(boolean connected) {
+                //Log.e("Network is: ", connected);
+                /**
+                 * True if internet is connected otherwise false
+                 */
+            }
+
+        });
+
+    }
+
     public void btLoginHandler(View v) {
         System.out.println("btLoginHandler");
 
@@ -80,13 +137,16 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("Response is: ", response);
                 //Toast.makeText(getApplicationContext(), "Response is: "+ response, Toast.LENGTH_SHORT).show();
 
-                AuthResponseModel authResponse = new Gson().fromJson(response, AuthResponseModel.class);
+                final AuthResponseModel authResponse = new Gson().fromJson(response, AuthResponseModel.class);
                 Log.e("Token is: ", authResponse.token);
 
-                UserManager.getInstance().getUser().setId("5b593fcc7df93600145bce42");
+                getUserInfo(authResponse.token);
 
-                Intent intent = new Intent(getApplicationContext(), MyCardsActivity.class);
-                startActivity(intent);
+                //UserManager.getInstance().getUser().setId("5b593fcc7df93600145bce42");
+
+
+
+
 
             }
 
