@@ -80,7 +80,12 @@ function insertOrUpdateUserAccount($userId, $name, $email) {
 		$res = doQueryInDatabase("INSERT INTO users (name, email, id) VALUES ('$name', '$email', '$user_id')");
 	}
 
-	return $res;
+  $result = [];
+  $result['id'] = $userId;
+  $result['name'] = $name;
+  $result['email'] = $email;
+
+	return $result;
 }
 
 

@@ -14,8 +14,8 @@ $email = $inputs["email"];
 
 
 if ($userId) {
-	$result = [];
-	$result['result'] = insertOrUpdateUserAccount($userId, $name, $email);
+
+	$result = insertOrUpdateUserAccount($userId, $name, $email);
 	return returnJSON($result);
 }
 
