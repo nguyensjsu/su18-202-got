@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.VolleyError;
+import com.google.gson.Gson;
 
 import java.util.HashMap;
 
@@ -196,6 +197,53 @@ public class MyCardsActivity extends AppCompatActivity {
                  */
             }
         });
+
+    }
+
+    public void btnRewardsBalanceHandler(View v) {
+        String url = Server.ENDPOINT_USER + "/getRewardsBalance.php";
+
+        HashMap<String, String> params = new HashMap<>();
+        params.put("token", UserManager.getInstance().getUser().getToken());
+        params.put("apiKey", "cmpe202kungfubelikewater");
+
+
+
+        ConnectionManager.volleyStringRequest(this, true, null, url, Request.Method.POST, params,new VolleyResponse() {
+
+            @Override
+            public void onResponse (String response){
+                Log.d("response", response);
+
+                final ApiResponseModel rsp = new Gson().fromJson(response, ApiResponseModel.class);
+
+                if (rsp.hasError()) {
+                    Toast.makeText(getApplicationContext(), "Response Error: "+ rsp.errorMessage, Toast.LENGTH_SHORT).show();
+                    return ;
+                }
+                Log.d("balance==", rsp.balance);
+                Toast.makeText(getApplicationContext(), "Rewards Balance: "+ rsp.balance, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("Response is: ", error.toString());
+                Toast.makeText(getApplicationContext(), "Response Error: "+ error.toString(), Toast.LENGTH_SHORT).show();
+                /**
+                 * handle Volley Error
+                 */
+            }
+
+            @Override
+            public void isNetwork(boolean connected) {
+                //Log.e("Network is: ", connected);
+                /**
+                 * True if internet is connected otherwise false
+                 */
+            }
+
+        });
+
 
     }
 

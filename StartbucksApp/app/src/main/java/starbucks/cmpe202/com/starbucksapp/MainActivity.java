@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void getUserInfo(String token){
+    public void getUserInfo(final String token){
 
         String url = Server.ENDPOINT_USER + "/getUserAccount.php";
 
@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("USER", user.getId());
                 Log.d("USER", user.getEmail());
                 UserManager.getInstance().getUser().setUser(user);
+                UserManager.getInstance().getUser().setToken(token);
 
                 Log.d("UserManager", UserManager.getInstance().getUser().getId());
                 Log.d("UserManager", UserManager.getInstance().getUser().getEmail());

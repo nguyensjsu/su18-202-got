@@ -77,7 +77,7 @@ function insertOrUpdateUserAccount($userId, $name, $email) {
 	if ($userObj != null){
 		$res = doQueryInDatabase("UPDATE users SET name ='$name', email = '$email' WHERE id = '$userId'");
 	} else {
-		$res = doQueryInDatabase("INSERT INTO users (name, email, id) VALUES ('$name', '$email', '$user_id')");
+		$res = doQueryInDatabase("INSERT INTO users (name, email, id) VALUES ('$name', '$email', '$userId')");
 	}
 
   $result = [];
